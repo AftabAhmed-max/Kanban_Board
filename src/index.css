@@ -1,0 +1,84 @@
+:root {
+  --kanban-bg: #161b22;
+  --card-bg: #23272f;
+  --header-bg: #1a1f26;
+  --sidebar-bg: #181c23;
+
+  --primary: #f3f6fc;
+  --secondary: #b6bad3;
+  --accent: #48a7fa;
+  --danger: #e57373;
+  --shadow: 0 8px 24px rgba(20, 20, 30, 0.22);
+
+  --column-header-todo: #48a7fa;
+  --column-header-inprogress: #fab33c;
+  --column-header-done: #57e690;
+}
+
+/* Light Theme! */
+[data-theme="light"] {
+  --kanban-bg: #eef3fa;
+  --card-bg: #fff;
+  --header-bg: #e3eaf4;
+  --sidebar-bg: #dde7f7;
+
+  --primary: #262738;
+  --secondary: #606577;
+  --accent: #2196f3;
+  --danger: #e57373;
+  --shadow: 0 4px 16px rgba(60, 80, 120, 0.08);
+
+  --column-header-todo: #3e8ef7;
+  --column-header-inprogress: #ffb648;
+  --column-header-done: #57e690;
+  background: var(--kanban-bg);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background: var(--kanban-bg);
+  color: var(--primary);
+  transition: background 0.3s, color 0.3s;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #23293a;
+}
+::-webkit-scrollbar-thumb {
+  background: #232f45;
+  border-radius: 6px;
+}
+
+*:not(input):not(textarea):not(select):not([contenteditable="true"]) {
+  caret-color: transparent !important;
+}
+
+/* Restore caret for inputs, textarea, select, contenteditable */
+input,
+textarea,
+select,
+[contenteditable="true"] {
+  caret-color: auto !important;
+}
+
+[data-theme="light"] input,
+[data-theme="light"] select,
+[data-theme="light"] .searchInput,   /* If you use a class */
+[data-theme="light"] .dropdown {
+  background: #fff !important;
+  color: #24292f !important;
+  border: 1px solid #d6dae3;
+  box-shadow: 0 2px 6px rgba(60,80,120,0.04);
+}
+
+[data-theme="light"] input::placeholder {
+  color: #8e98b8 !important;
+  opacity: 1;
+}

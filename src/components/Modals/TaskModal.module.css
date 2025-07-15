@@ -1,0 +1,136 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(20,24,35,0.74);
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: var(--card-bg);
+  color: var(--primary);
+  border-radius: 18px;
+  padding: 2.5rem 2.2rem 2rem 2.2rem;
+  box-shadow: 0 12px 48px rgba(20,20,40,0.44);
+  min-width: 360px;
+  position: relative;
+  max-width: 96vw;
+  width: 400px;
+  margin: 0 1rem;
+  animation: modalIn 0.2s;
+}
+
+@keyframes modalIn {
+  from { transform: translateY(36px) scale(0.98); opacity: 0.3;}
+  to   { transform: none; opacity: 1;}
+}
+
+.close {
+  background: none;
+  border: none;
+  color: var(--danger);
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 2;
+  padding: 0;
+  line-height: 1;
+  transition: color 0.13s, background 0.12s;
+}
+.close:hover,
+.close:focus {
+  color: #c0392b;
+}
+
+.heading {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--primary);
+}
+
+.field {
+  margin-bottom: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  border: none;
+  border-radius: 7px;
+  margin-top: 0.3rem;
+  padding: 0.72rem 0.8rem;
+  background: var(--header-input-bg, #23293a);
+  color: var(--primary);
+  font-size: 1.08rem;
+  font-weight: 500;
+  outline: none;
+  resize: none;
+  transition: background 0.21s, color 0.19s, border 0.17s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  background: #263041;
+  border: 1.5px solid var(--accent);
+  color: var(--primary);
+}
+
+/* --- LIGHT THEME OVERRIDES --- */
+[data-theme="light"] input,
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  background: #f5f7fa !important;
+  color: #232738 !important;
+  border: 1px solid #dde7f7;
+}
+
+[data-theme="light"] input:focus,
+[data-theme="light"] textarea:focus,
+[data-theme="light"] select:focus {
+  background: #eaf1fb !important;
+  color: #232738 !important;
+  border: 1.5px solid #2196f3 !important;
+}
+
+.save {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.07rem;
+  font-weight: 700;
+  padding: 0.72rem 0;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.16s;
+  margin-top: 0.8rem;
+}
+.save:hover {
+  background: #2693e6;
+}
+
+/* CSS Vars for Input Backgrounds */
+body,
+[data-theme="dark"] {
+  --header-input-bg: #23293a;
+}
+[data-theme="light"] {
+  --header-input-bg: #f5f7fa;
+}

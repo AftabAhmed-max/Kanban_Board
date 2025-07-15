@@ -1,0 +1,197 @@
+.header {
+  background: var(--header-bg);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.4rem 0 1.8rem;
+  height: 70px;
+  min-height: 70px;
+  border-bottom: 1px solid #23293a;
+  box-shadow: 0 2px 12px rgba(20, 20, 30, 0.12);
+  z-index: 10;
+  position: relative;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.header-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: 1px;
+  margin-right: 2.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.icon {
+  font-size: 1.45rem;
+  color: #b6bad3;
+  cursor: pointer;
+  transition: color 0.16s;
+}
+
+.icon:hover {
+  color: var(--accent);
+}
+
+.avatar {
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #303b4a;
+  background: #1d232f;
+  margin-left: 0.7rem;
+}
+
+.avatar,
+.icon {
+  outline: none;
+  caret-color: transparent;
+}
+
+.avatar:focus,
+.icon:focus {
+  outline: none !important;
+  caret-color: transparent !important;
+}
+
+.avatarWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Avatar dropdown */
+.menu {
+  position: absolute;
+  right: 0;
+  top: 52px;
+  background: var(--card-bg, #23272f);
+  color: var(--primary);
+  border-radius: 13px;
+  min-width: 230px;
+  box-shadow: 0 8px 32px rgba(30,40,60,0.22);
+  z-index: 100;
+  padding: 0.8rem 0;
+  animation: menuFadeIn 0.18s;
+  border: 1px solid #222a35;
+}
+
+@keyframes menuFadeIn {
+  from { opacity: 0; transform: translateY(-10px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.menuHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 1.3rem 0.5rem 1.3rem;
+  border-bottom: 1px solid #23293a;
+  margin-bottom: 0.2rem;
+}
+
+.menuAvatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #303b4a;
+  background: #1d232f;
+}
+
+.menuName {
+  font-weight: 700;
+  font-size: 1.04rem;
+  letter-spacing: 0.4px;
+}
+
+.menuEmail {
+  font-size: 0.98rem;
+  color: #98a0bb;
+  font-weight: 500;
+}
+
+.menuItem {
+  background: none;
+  border: none;
+  color: inherit;
+  width: 100%;
+  text-align: left;
+  padding: 0.82rem 1.3rem;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: background 0.14s, color 0.14s;
+}
+.menuItem:hover,
+.menuItem:focus {
+  background: #263041;
+  color: var(--accent, #48a7fa);
+}
+
+/* --- Responsive styles --- */
+@media (max-width: 700px) {
+  .header {
+    padding: 0 1rem 0 0.5rem;
+    height: 56px;
+    min-height: 56px;
+    font-size: 1.04rem;
+  }
+
+  .header-title {
+    font-size: 1.1rem;
+    margin-right: 1rem;
+    max-width: 120px;
+  }
+
+  .avatar {
+    width: 33px;
+    height: 33px;
+    margin-left: 0.3rem;
+  }
+
+  .icon {
+    font-size: 1.18rem;
+    margin: 0 0.1rem;
+  }
+
+  .menu {
+    right: 0;
+    top: 38px;
+    min-width: 178px;
+    border-radius: 10px;
+    font-size: 0.97rem;
+  }
+  .menuHeader {
+    gap: 0.55rem;
+    padding: 0.4rem 0.6rem 0.35rem 0.6rem;
+  }
+  .menuAvatar {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* Hide some right-side icons if you want on extra-small screens
+@media (max-width: 420px) {
+  .icon:not(:first-child):not(:last-child) {
+    display: none;
+  }
+}
+*/

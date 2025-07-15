@@ -1,0 +1,15 @@
+.toggleBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  transition: background 0.16s, box-shadow 0.15s;
+  outline: none;
+}
+.toggleBtn:focus, .toggleBtn:hover {
+  background: #fffbdf26;
+  box-shadow: 0 0 0 2px var(--accent, #ffd60040);
+}

@@ -1,0 +1,42 @@
+.board {
+  display: flex;
+  gap: 2.3rem;
+  padding: 2.2rem 1rem;
+  background: var(--kanban-bg);
+  min-height: 100vh;
+  transition: background 0.3s;
+  align-items: flex-start;
+  overflow-x: auto; /* Columns will scroll horizontally if needed */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* RESPONSIVE: Shrink gap and padding for tablets/small laptops */
+@media (max-width: 1020px) {
+  .board {
+    gap: 1.1rem;
+    padding: 1.1rem 0.5rem;
+  }
+}
+
+/* RESPONSIVE: Columns stack closer on mobile; scroll is smooth */
+@media (max-width: 700px) {
+  .board {
+    gap: 0.7rem;
+    padding: 0.6rem 0.3rem 0.9rem 0.3rem;
+    min-height: 90vh;
+    /* Force horizontal scroll (snap) on mobile for better UX */
+    scroll-snap-type: x mandatory;
+  }
+  .board > * {
+    scroll-snap-align: start;
+  }
+}
+
+/* Make board never overflow vertically on very small screens */
+@media (max-width: 420px) {
+  .board {
+    gap: 0.32rem;
+    padding: 0.22rem 0.15rem 0.5rem 0.15rem;
+  }
+}
